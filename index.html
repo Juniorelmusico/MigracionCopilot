@@ -229,32 +229,31 @@
   .qrbox input:focus{outline:2px solid var(--rojo);outline-offset:-2px}
   .qrbox .apagado{opacity:.35}
 
-  /* ── 11 licencias a3 vs a5 ── */
-  .lic-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
-  .lic-card{border:1px solid var(--regla);background:var(--card-bg);border-radius:8px;padding:22px;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.03)}
-  .lic-card.top{border-top:4px solid var(--azul-accent)}
-  .lic-card.lead{border-top:4px solid var(--rojo);background:linear-gradient(180deg, #FFFDFD 0%, #FFFFFF 100%)}
-  .lic-tag{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:3px 8px;border-radius:3px;display:inline-block;margin-bottom:8px}
-  .lic-card.top .lic-tag{background:var(--azul-light);color:var(--azul-accent)}
-  .lic-card.lead .lic-tag{background:var(--rojo-light);color:var(--rojo)}
-  .lic-card h3{font-size:22px;font-weight:800;margin:0 0 6px;color:var(--tinta)}
-  .lic-desc{font-size:14px;color:var(--gris);margin-bottom:14px;line-height:1.4}
-  .lic-list{list-style:none;padding:0;margin:0;font-size:13.5px}
-  .lic-list li{padding:7px 0;border-top:1px solid var(--regla2);display:flex;gap:10px;align-items:flex-start}
-  .lic-list li::before{content:"✓";color:var(--azul-accent);font-weight:800}
-  .lic-card.lead .lic-list li::before{color:var(--rojo)}
-  
-  .tabla-lic{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px;background:#fff;border:1px solid var(--regla);border-radius:6px;overflow:hidden}
-  .tabla-lic th,.tabla-lic td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--regla)}
-  .tabla-lic th{background:var(--panel);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gris)}
-  .tabla-lic tr:last-child td{border-bottom:none}
-  .tabla-lic td.c{text-align:center;font-weight:600}
-  .badge-si{background:#DCFCE7;color:#166534;padding:3px 8px;border-radius:3px;font-size:12px;font-weight:700}
-  .badge-no{background:#F1F5F9;color:#64748B;padding:3px 8px;border-radius:3px;font-size:12px}
-  .badge-full{background:var(--rojo-light);color:var(--rojo);padding:3px 8px;border-radius:3px;font-size:12px;font-weight:700}
-
   footer{margin-top:52px;padding-top:18px;border-top:1.5px solid var(--tinta);
     font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
+
+
+  /* ── correos por área ── */
+  .buscador{display:flex;gap:12px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+  .buscador input{flex:1;min-width:220px;border:1.5px solid var(--regla);padding:11px 14px;
+    font-family:inherit;font-size:15px;background:#fff;color:var(--tinta);border-radius:6px}
+  .buscador input:focus{outline:2px solid var(--rojo);outline-offset:-2px}
+  .buscador .cta{font-size:12.5px;color:var(--gris);font-weight:600;letter-spacing:.04em}
+  .tabla{width:100%;border-collapse:collapse;font-size:15px}
+  .tabla th{text-align:left;background:var(--tinta);color:#fff;padding:11px 14px;
+    font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .tabla td{padding:11px 14px;border-bottom:1px solid var(--regla);vertical-align:top}
+  .tabla tr:nth-child(even) td{background:var(--panel)}
+  .tabla .co{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;color:var(--rojo);font-weight:600}
+  .tabla .ti{font-size:12px;color:var(--gris);letter-spacing:.04em}
+  .tabla tr.oculta{display:none}
+  .vacia{padding:22px 14px;color:var(--gris);font-size:15px}
+  .reglas{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:14px;margin:26px 0 8px}
+  .rg2{border:1.5px solid var(--regla);border-top:3.5px solid var(--rojo);padding:16px 18px 18px;background:#fff}
+  .rg2 .h{font-size:16.5px;font-weight:700;line-height:1.25;margin-bottom:6px;color:var(--tinta)}
+  .rg2 p{margin:0;font-size:14px;color:var(--gris);line-height:1.5}
+  .rg2 code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;
+    color:var(--rojo);background:var(--panel);padding:1px 5px;border-radius:3px}
 
   @media (max-width:860px){
     .cuerpo{grid-template-columns:1fr}
@@ -264,7 +263,6 @@
       padding:6px 14px 6px 0;margin-right:14px}
     nav button .nn{display:inline;margin-right:5px}
     .lam{padding-left:0}
-    .lic-grid{grid-template-columns:1fr}
     .sim{grid-template-columns:1fr}
     .fcols{grid-template-columns:1fr;gap:22px}
     .simn{grid-template-columns:1fr;gap:20px}
@@ -310,7 +308,7 @@
       <button data-l="7" aria-pressed="false"><span class="nn">08</span>Formulario</button>
       <button data-l="8" aria-pressed="false"><span class="nn">09</span>Automatización</button>
       <button data-l="9" aria-pressed="false"><span class="nn">10</span>Simulador</button>
-      <button data-l="10" aria-pressed="false"><span class="nn">11</span>Licencias A3 vs A5</button>
+      <button data-l="10" aria-pressed="false"><span class="nn">11</span>Correos por área</button>
     </nav>
 
     <!-- 01 -->
@@ -476,38 +474,32 @@
 
     <!-- 11 -->
     <section class="lam" id="l10" hidden>
-      <div class="rot">11</div><h2>Diferencias entre Licencias Microsoft A3 y A5</h2>
-      <p class="guia">Ambas licencias incluyen Copilot con Protección de Datos Empresarial (EDP). La diferencia principal radica en ciberseguridad avanzada, analítica y gobernanza.</p>
+      <div class="rot">11</div><h2>Correos por área</h2>
+      <p class="guia">A cada solicitud se le notifica el correo genérico del área del solicitante, nunca uno personal. Así la notificación no depende de que una persona esté disponible.</p>
 
-      <div class="lic-grid">
-        <div class="lic-card top">
-          <span class="lic-tag">Estándar Institucional</span>
-          <h3>Microsoft 365 A3</h3>
-          <div class="lic-desc">Licencia base para funcionarios y docentes con herramientas completas de productividad y seguridad esencial.</div>
-          <ul class="lic-list">
-            <li><strong>Microsoft Copilot Chat</strong> con protección de datos comerciales (EDP). Sus prompts no entrenan modelos.</li>
-            <li><strong>Apps completas de Office:</strong> Word, Excel, PowerPoint, Outlook y OneNote instalables hasta en 5 PCs/Macs.</li>
-            <li><strong>Gestión de Dispositivos:</strong> Microsoft Intune y administración básica de identidades (Entra ID Plan 1).</li>
-            <li><strong>Seguridad estándar:</strong> Antivirus Microsoft Defender básico y cifrado de datos.</li>
-          </ul>
-        </div>
-
-        <div class="lic-card lead">
-          <span class="lic-tag">Seguridad y Analítica Avanzada</span>
-          <h3>Microsoft 365 A5</h3>
-          <div class="lic-desc">Suite integral máxima con blindaje contra amenazas avanzadas, eDiscovery forense y analítica institucional.</div>
-          <ul class="lic-list">
-            <li><strong>Todo lo incluido en A3</strong>, más la suite completa de ciberseguridad Microsoft Defender XDR.</li>
-            <li><strong>Defender for Office 365 Plan 2:</strong> Protección contra phishing dirigido, safe links y detonación segura de adjuntos.</li>
-            <li><strong>Microsoft Purview Avanzado:</strong> Prevención de Pérdida de Datos (DLP) contextual y eDiscovery Premium.</li>
-            <li><strong>Power BI Pro:</strong> Creación y publicación de tableros de analítica avanzada para gestión académica/administrativa.</li>
-            <li><strong>Telefonía y Audioconferencias en Teams:</strong> Sistema telefónico en la nube integrado.</li>
-          </ul>
-        </div>
+      <div class="buscador">
+        <input type="text" id="busca" placeholder="Buscar área o facultad…" spellcheck="false">
+        <span class="cta" id="cuenta"></span>
       </div>
 
-      <div class="acc" id="detallesLic"></div>
+      <table class="tabla">
+        <thead><tr><th style="width:44%">Área o facultad</th><th style="width:38%">Correo genérico</th><th style="width:18%">Tipo</th></tr></thead>
+        <tbody id="tcorreos"></tbody>
+      </table>
+      <div class="vacia" id="sinres" hidden>No hay coincidencias.</div>
+
+      <div class="reglas">
+        <div class="rg2"><div class="h">Solo cuentas institucionales</div>
+          <p>Todas terminan en el dominio de la universidad. Un correo externo o personal no se acepta como destinatario de una solicitud.</p></div>
+        <div class="rg2"><div class="h">Buzón compartido, no persona</div>
+          <p>Cada dirección es un buzón compartido con al menos dos responsables. Si uno sale de vacaciones, el flujo no se detiene.</p></div>
+        <div class="rg2"><div class="h">Nomenclatura uniforme</div>
+          <p>Se arma con el nombre corto del área: <code>area@</code> para unidades administrativas y <code>facultad@</code> para facultades.</p></div>
+        <div class="rg2"><div class="h">Se elige en el formulario</div>
+          <p>La pregunta 2 del formulario define el área, y el Power Automate toma de aquí el correo al que notificar.</p></div>
+      </div>
     </section>
+
 
   </div>
 
@@ -1004,29 +996,48 @@ $("s_est").addEventListener("click",function(e){
 });
 correr();
 
-/* ═══ 11 LICENCIAS A3 VS A5 ═══ */
-var LIC_DET=[
- {c:"01",t:"Protección de Datos en Copilot (EDP)",f:[
-  ["En Licencia A3","Incluido con Protección de Datos Empresarial (EDP). Las consultas no se guardan ni entrenan a la IA."],
-  ["En Licencia A5","Misma protección EDP, más políticas automáticas de etiquetado y prevención de fuga de datos (DLP)."],
-  ["Qué significa","Ambas licencias son 100% seguras para trabajar con documentos internos de la universidad."]]},
- {c:"02",t:"Ciberseguridad y Amenazas (Defender XDR)",f:[
-  ["En Licencia A3","Microsoft Defender Antivirus y firewall básico administrado por Intune."],
-  ["En Licencia A5","Suite completa Defender XDR: Defender for Office 365 P2 (antiphishing dinámico), Defender for Endpoint y Defender for Identity."],
-  ["Qué significa","A5 detecta ataques coordinados y bloquea enlaces maliciosos en tiempo real."]]},
- {c:"03",t:"Analítica y Business Intelligence",f:[
-  ["En Licencia A3","Visualización básica y consumo de informes compartidos en Power BI Free."],
-  ["En Licencia A5","Licencia Power BI Pro completa para crear, modelar y publicar cuadros de mando institucionales."],
-  ["Qué significa","A5 permite a las jefaturas y analistas cruzar métricas y publicar tableros interactivos."]]},
- {c:"04",t:"Cumplimiento, Auditoría y eDiscovery",f:[
-  ["En Licencia A3","Búsqueda de contenido y retención básica de correos y chats."],
-  ["En Licencia A5","Microsoft Purview eDiscovery (Premium), auditoría avanzada y gestión de riesgos internos."],
-  ["Qué significa","A5 ofrece capacidades forenses para auditorías legales y regulatorias complejas."]]}
+/* ═══ 11 · CORREOS POR ÁREA ═══ */
+var DOM="@udla.edu.ec";
+var AREAS=[
+ {a:"FICA · Facultad de Ingeniería y Ciencias Aplicadas",c:"fica",t:"Facultad"},
+ {a:"Facultad de Ciencias de la Salud",c:"salud",t:"Facultad"},
+ {a:"Facultad de Ciencias Sociales y Comunicación",c:"sociales",t:"Facultad"},
+ {a:"Facultad de Derecho",c:"derecho",t:"Facultad"},
+ {a:"Facultad de Ciencias Económicas y Administrativas",c:"economicas",t:"Facultad"},
+ {a:"Facultad de Arquitectura y Diseño",c:"arquitectura",t:"Facultad"},
+ {a:"Facultad de Educación",c:"educacion",t:"Facultad"},
+ {a:"Facultad de Gastronomía y Turismo",c:"gastronomia",t:"Facultad"},
+ {a:"Marketing",c:"marketing",t:"Administrativa"},
+ {a:"Infraestructura",c:"infraestructura",t:"Administrativa"},
+ {a:"Soporte IT",c:"soporte.it",t:"Administrativa"},
+ {a:"Seguridad de la Información",c:"seguridad.informacion",t:"Administrativa"},
+ {a:"Talento Humano",c:"talento.humano",t:"Administrativa"},
+ {a:"Finanzas",c:"finanzas",t:"Administrativa"},
+ {a:"Compras y Adquisiciones",c:"compras",t:"Administrativa"},
+ {a:"Admisiones",c:"admisiones",t:"Administrativa"},
+ {a:"Registro Académico",c:"registro.academico",t:"Administrativa"},
+ {a:"Biblioteca",c:"biblioteca",t:"Administrativa"},
+ {a:"Comunicación Institucional",c:"comunicacion",t:"Administrativa"},
+ {a:"Bienestar Estudiantil",c:"bienestar",t:"Administrativa"},
+ {a:"Investigación",c:"investigacion",t:"Administrativa"},
+ {a:"Vinculación con la Sociedad",c:"vinculacion",t:"Administrativa"},
+ {a:"Internacionalización",c:"internacional",t:"Administrativa"},
+ {a:"Rectorado y Vicerrectorados",c:"rectorado",t:"Autoridades"}
 ];
-$("detallesLic").innerHTML=LIC_DET.map(function(r){
-  return '<div class="it" data-on="0"><button><span class="cd">'+r.c+'</span><span class="tx">'+r.t+
-    '</span><span class="sg">+</span></button><div class="det">'+fls(r.f)+'</div></div>';}).join('');
-acordeon($("detallesLic"));
+function pintaCorreos(f){
+  f=(f||"").toLowerCase().trim();
+  var vis=0;
+  $("tcorreos").innerHTML=AREAS.map(function(x){
+    var hit = !f || x.a.toLowerCase().indexOf(f)>-1 || x.c.indexOf(f)>-1 || x.t.toLowerCase().indexOf(f)>-1;
+    if(hit) vis++;
+    return '<tr class="'+(hit?'':'oculta')+'"><td>'+x.a+'</td>'+
+      '<td class="co">'+x.c+DOM+'</td><td class="ti">'+x.t+'</td></tr>';
+  }).join('');
+  $("cuenta").textContent = vis+" de "+AREAS.length+" áreas";
+  $("sinres").hidden = vis>0;
+}
+$("busca").addEventListener("input",function(){ pintaCorreos(this.value); });
+pintaCorreos("");
 
 /* ═══ NAVEGACIÓN ═══ */
 $("nav").addEventListener("click",function(e){
